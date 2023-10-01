@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const mainRoutes = require('./routes/home/mainRoutes');
 const adminRoutes = require('./routes/admin/adminRoutes');
+const adminPosts = require('./routes/admin/posts');
 
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public' )));
 //use routes
 app.use('/', mainRoutes);
 app.use('/admin', adminRoutes);
+app.use('/admin/posts', adminPosts)
 
 
    

@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 
@@ -7,9 +6,13 @@ router.all('/*', (req, res, next) => {
     next();
 })
 
-router.get('/', (req, res) => {
-    res.render('admin/index')
+router.get('/', (req, res, next) => {
+    res.send('It works')
+})
+
+router.get('/create', (req, res) => {
+    res.render('admin/posts/create')
 })
 
 
-module.exports = router;
+module.exports = router
